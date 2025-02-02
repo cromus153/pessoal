@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dieta de Matheus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      function filterMeals() {
+        let filter = document.getElementById('mealFilter').value.toLowerCase();
+        let sections = document.querySelectorAll('.meal-section');
+
+        sections.forEach((section) => {
+          if (filter === 'todas' || section.dataset.meal === filter) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      }
+
+      $(document).ready(function () {
+        var kcalTotal = 0;
+        var kcal = document.getElementsByClassName('kcal');
+        console.log(kcal, 'kcal');
+
+        $(kcal).each(function (index, element) {
+          kcalTotal += parseInt(element.innerText, 10);
+        });
+
+        let kcalTotalSpan = document.getElementById('kcalTotal');
+        kcalTotalSpan.innerHTML = kcalTotal;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="text-center">Dieta de Matheus de Oliveira Miranda - <span id="kcalTotal"> - </span> Kcal</h1>
+
+      <div class="mb-3">
+        <label for="mealFilter" class="form-label">Filtrar refeições:</label>
+        <select id="mealFilter" class="form-select" onchange="filterMeals()">
+          <option value="todas">Todas</option>
+          <option value="cafe">Café da Manhã</option>
+          <option value="lanche-manha">Lanche da Manhã</option>
+          <option value="almoco">Almoço</option>
+          <option value="lanche">Lanche da Tarde</option>
+          <option value="jantar">Jantar</option>
+          <option value="ceia">Ceia</option>
+        </select>
+      </div>
+
+      <div class="meal-section" data-meal="cafe">
+        <h2>Café da Manhã - <span class="kcal">510</span> Kcal</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Quantidade</th>
+              <th>Alimento</th>
+              <th>Substituições (Unidade)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2 Fatias</td>
+              <td>Pão integral (30g)</td>
+              <td>
+                <ul>
+                  <li>Pão de centeio (30g)</li>
+                  <li>Pão de aveia (30g)</li>
+                  <li>Pão sírio integral (30 g)</li>
+                  <li>Torrada integral (20 g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>3 Unidades</td>
+              <td>Ovo cozido (50g)</td>
+              <td>
+                <ul>
+                  <li>Ovo mexido (50g)</li>
+                  <li>2 claras de ovo (60g)</li>
+                  <li>Ovo pochê (50 g)</li>
+                  <li>Omelete de claras de ovo (60 g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>1 Fatia</td>
+              <td>Queijo branco (30g)</td>
+              <td>
+                <ul>
+                  <li>Queijo minas frescal (30g)</li>
+                  <li>Ricota (30g)</li>
+                  <li>Queijo cottage (30 g)</li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr>
+              <td>1 Unidades</td>
+              <td>Banana média (100g)</td>
+              <td>
+                <ul>
+                  <li>Maçã (100g)</li>
+                  <li>Kiwi (75g)</li>
+                  <li>Melancia (100g)</li>
+                  <li>Morangos (100 g)</li>
+                  <li>Pêssego (100 g)</li>
+                  <li>Laranja (100 g)</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="meal-section" data-meal="lanche-manha">
+        <h2>Lanche da Manhã - <span class="kcal">171</span> Kcal</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Quantidade</th>
+              <th>Alimento</th>
+              <th>Substituições</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01 Unidade</td>
+              <td>Iogurte natural desnatado (100g)</td>
+              <td>
+                <ul>
+                  <li>Iogurte grego desnatado (100g)</li>
+                  <li>Leite desnatado (200ml)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>1 Colher de chá</td>
+              <td>Mel (7g)</td>
+              <td>
+                <ul>
+                  <li>Adoçante ou Stevia (quantidade a gosto)</li>
+                  <li>Geleia light (10g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>15 Gramas</td>
+              <td>Amêndoas (ou castanhas) (15g)</td>
+              <td>
+                <ul>
+                  <li>Castanha-do-pará (10g)</li>
+                  <li>Noz (10g)</li>
+                  <li>Castanha de caju (15g)</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="meal-section" data-meal="almoco">
+        <h2>Almoço - <span class="kcal">425</span> Kcal</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Quantidade</th>
+              <th>Alimento</th>
+              <th>Substituições</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>150 Gramas</td>
+              <td>Frango grelhado (150g)</td>
+              <td>
+                <ul>
+                  <li>Peito de peru (150g)</li>
+                  <li>Carne magra bovina (150g)</li>
+                  <li>Peixe (150g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>100 Gramas</td>
+              <td>Arroz Branco (100g)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>100 Gramas</td>
+              <td>Brócolis cozidos (100g)</td>
+              <td>
+                <ul>
+                  <li>Couve-flor (100g)</li>
+                  <li>Espinafre (100g)</li>
+                  <li>Abobrinha (100g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>A Vontade</td>
+              <td>Salada de alface e tomate</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="meal-section" data-meal="lanche">
+        <h2>Lanche da Tarde - <span class="kcal">251</span> Kcal</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Quantidade</th>
+              <th>Alimento</th>
+              <th>Substituições</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 Unidade</td>
+              <td>Maçã média (100g)</td>
+              <td>
+                <ul>
+                  <li>Pera (100g)</li>
+                  <li>Laranja (100g)</li>
+                  <li>Uva (100g)</li>
+                  <li>Abacaxi (100g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>1 Porção</td>
+              <td>whey protein</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>01 Unidade</td>
+              <td>Iogurte natural desnatado (100g)</td>
+              <td>
+                <ul>
+                  <li>Iogurte grego desnatado (100g)</li>
+                  <li>Leite desnatado (200ml)</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="meal-section" data-meal="jantar">
+        <h2>Jantar - <span class="kcal">402</span> Kcal</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Quantidade</th>
+              <th>Alimento</th>
+              <th>Substituições</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>100 Gramas</td>
+              <td>Peixe (100g)</td>
+              <td>
+                <ul>
+                  <li>Carne magra de boi (100g)</li>
+                  <li>Atum (100g)</li>
+                  <li>Frango grelhado (100g)</li>
+                  <li>Camarão cozido (100g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>100 Gramas</td>
+              <td>Arroz branco ou integral (100g)</td>
+              <td>
+                <ul>
+                  <li>Purê de batata ou abóbora (100g)</li>
+                  <li>Purê de batata-doce (100g)</li>
+                  <li>Purê de cenoura (100g)</li>
+                  <li>Purê de inhame (100g)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>50 Gramas</td>
+              <td>Espinafre refogado (50g)</td>
+              <td>
+                <ul>
+                  <li>Couve refogada (50g)</li>
+                  <li>Acelga refogada (50g)</li>
+                  <li>Almeirão (50g)</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="meal-section" data-meal="ceia">
+        <h2>Ceia - <span class="kcal">360</span> Kcal</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Quantidade</th>
+              <th>Alimento</th>
+              <th>Substituições</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 Porção</td>
+              <td>Whey Protein</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>01 Unidade</td>
+              <td>Iogurte natural desnatado (100g)</td>
+              <td>
+                <ul>
+                  <li>Iogurte grego desnatado (100g)</li>
+                  <li>Leite desnatado (200ml)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>30 Gramas</td>
+              <td>Castanhas</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
