@@ -61,6 +61,14 @@
         font-size: 1.5rem;
         margin-top: 20px;
       }
+
+      #contador {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #1c1e20;
+      }
+
       .container {
         display: none;
       }
@@ -82,6 +90,10 @@
         box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
       }
 
+      .btn-love:hover:enabled {
+        transform: scale(1.05);
+      }
+
       .conteudo-escondido {
         opacity: 0;
         transform: translateY(50px);
@@ -98,12 +110,15 @@
   </head>
   <body>
     <div class="bg-slideshow"></div>
+    <div id="contador">Carregando contagem regressiva...</div>
 
     <button
+      id="botao"
       class="btn_inicial btn btn-lg btn-love px-5 py-3 fs-3 fw-bold shadow"
       onclick="tocarMusica()"
+      disabled
     >
-      💖 Clique Aqui 💖
+      💖 Clique Aqui ao Final da Contagem 💖
     </button>
 
     <audio id="musica">
@@ -179,6 +194,36 @@
     </div>
 
     <script>
+      const destino = new Date("2025-08-06T00:00:00");
+      const contador = document.getElementById("contador");
+      const botao = document.getElementById("botao");
+
+      function atualizarContador() {
+        const agora = new Date();
+        const distancia = destino - agora;
+
+        if (distancia <= 0) {
+          contador.textContent = "Chegou o momento! 💖";
+          botao.textContent = "Clique aqui! 💖";
+          botao.disabled = false;
+          return;
+        }
+
+        const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor(
+          (distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutos = Math.floor(
+          (distancia % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+        contador.textContent = `Faltam ${horas} horas ${minutos} minutos e ${segundos} segundos 💫`;
+        requestAnimationFrame(() => setTimeout(atualizarContador, 1000));
+      }
+
+      atualizarContador();
+
       function tocarMusica() {
         const audio = document.getElementById("musica");
         audio.play();
@@ -186,6 +231,7 @@
         document.querySelector(".container").style.display = "block";
         document.querySelector(".btn_inicial").style.display = "none";
         document.querySelector(".bg-slideshow").style.display = "block";
+        document.getElementById("contador").style.display = "none";
 
         const conteudo = document.getElementById("conteudo");
         conteudo.style.display = "block";
