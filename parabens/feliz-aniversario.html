@@ -29,6 +29,7 @@
         background-position: center;
         transition: background-image 2s ease-in-out;
         opacity: 0.15;
+        display: none;
       }
 
       @keyframes slideshow {
@@ -98,10 +99,6 @@
   <body>
     <div class="bg-slideshow"></div>
 
-    <!-- <button class="btn btn-love btn-lg" onclick="tocarMusica()">
-      Tocar Música
-    </button> -->
-
     <button
       class="btn_inicial btn btn-lg btn-love px-5 py-3 fs-3 fw-bold shadow"
       onclick="tocarMusica()"
@@ -113,28 +110,9 @@
       <source src="audio.mp3" type="audio/mpeg" />
       Seu navegador não suporta áudio HTML5.
     </audio>
-    <!-- Música de fundo -->
-    <!-- <audio autoplay loop>
-      <source src="audio.mp3" type="audio/mpeg" />
-      Seu navegador não suporta áudio.
-    </audio> -->
-    <!-- <audio controls>
-      <source src="caminho/para/a/musica.mp3" type="audio/mpeg" />
-      Seu navegador não suporta o elemento de áudio.
-    </audio> -->
-    <!-- <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/dCwVsiAvaAA?si=oqRNWtTjY10qW60f"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe> -->
 
     <div id="conteudo" class="container conteudo-escondido mt-5">
-      <h1 class="mb-4">💖 Feliz Aniversário, Meu Amor 💖</h1>
+      <h2 class="mb-4">💖 Feliz Aniversário, Meu Amor 💖</h2>
 
       <div class="card card-custom mx-auto" style="max-width: 600px">
         <h2 class="mb-3">Hoje você completa:</h2>
@@ -146,9 +124,6 @@
         <hr class="my-4" />
 
         <div class="contador">
-          <!-- <p><strong>Dias vividos:</strong> <span id="dias"></span></p>
-          <p><strong>Meses vividos:</strong> <span id="meses"></span></p>
-          <p><strong>Horas vividas:</strong> <span id="horas"></span></p> -->
           <p>
             Você viveu <strong>336</strong> meses.<br />
             Cada um trazendo camadas de maturidade, sonhos, quedas, recomeços e
@@ -210,6 +185,7 @@
 
         document.querySelector(".container").style.display = "block";
         document.querySelector(".btn_inicial").style.display = "none";
+        document.querySelector(".bg-slideshow").style.display = "block";
 
         const conteudo = document.getElementById("conteudo");
         conteudo.style.display = "block";
@@ -218,25 +194,5 @@
         }, 10); // atraso mínimo para o CSS pegar a transição
       }
     </script>
-
-    <!-- <script>
-      // Data de nascimento e de hoje (06/08/2025 às 00h)
-      const nascimento = new Date("1997-08-06T00:00:00");
-      const hoje = new Date("2025-08-06T00:00:00");
-
-      const diffMs = hoje - nascimento;
-      const dias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-      const horas = Math.floor(diffMs / (1000 * 60 * 60));
-      const meses =
-        (hoje.getFullYear() - nascimento.getFullYear()) * 12 +
-        (hoje.getMonth() - nascimento.getMonth());
-
-      document.getElementById("dias").textContent =
-        dias.toLocaleString("pt-BR");
-      document.getElementById("horas").textContent =
-        horas.toLocaleString("pt-BR");
-      document.getElementById("meses").textContent =
-        meses.toLocaleString("pt-BR");
-    </script> -->
   </body>
 </html>
