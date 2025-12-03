@@ -91,29 +91,50 @@
       }
 
       /* Timeline */
-      .timeline {
-        position: relative;
-        margin: 40px auto;
-        padding: 20px 0;
-        max-width: 850px;
-      }
+     .timeline {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
 
-      .timeline::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 100%;
-        background: #b387ff;
-        border-radius: 2px;
-      }
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-50%);
+}
 
-      .timeline-item {
-        position: relative;
-        width: 50%;
-        padding: 20px 30px;
-      }
+.timeline-item {
+  width: 50%;
+  position: relative;
+  padding: 20px 30px;
+}
+
+.timeline-item.left {
+  float: left;
+  text-align: right;
+}
+
+.timeline-item.right {
+  float: right;
+  text-align: left;
+}
+
+.timeline-item .dot {
+  position: absolute;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #b388ff;
+  background: #1c152c;
+}
 
       .left {
         left: 0;
@@ -151,19 +172,6 @@
         font-size: 1rem;
       }
 
-      .timeline-item {
-        margin-bottom: 40px;
-      }
-
-      .timeline-date {
-        font-weight: 600;
-        color: #caa5ff;
-      }
-
-      .timeline-text {
-        opacity: 0.9;
-      }
-
       /* Photo spaces */
       .photo-frame {
         width: 100%;
@@ -189,6 +197,29 @@
         max-width: 850px;
         margin: auto;
       }
+
+      /* 📱 MOBILE FIX */
+@media (max-width: 768px) {
+
+  .timeline::before {
+    left: 20px; /* linha vai para a esquerda */
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 10px;
+    float: none;
+    text-align: left !important;
+  }
+
+  .timeline-item .dot {
+    left: 12px;
+    right: auto !important;
+  }
+
+}
     </style>
   </head>
   <body>
