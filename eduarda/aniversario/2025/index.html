@@ -91,59 +91,70 @@
       }
 
       /* Timeline */
-     .timeline {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 0;
-}
+      .timeline {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 0;
+      }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3px;
-  height: 100%;
-  background: rgba(255,255,255,0.15);
-  transform: translateX(-50%);
-}
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        left: 20px; /* linha vai para a esquerda */
+        transform: none;
+      }
 
-.timeline-item {
-  width: 50%;
-  position: relative;
-  padding: 20px 30px;
-}
+      .timeline-item {
+        position: relative;
+        width: 100%;
+        float: none;
+        text-align: left !important;
+        padding: 20px 20px 20px 70px; /* espaço da linha */
+        margin-bottom: 25px; /* espaçamento entre box */
+      }
 
-.timeline-item.left {
-  float: left;
-  text-align: right;
-}
-
-.timeline-item.right {
-  float: right;
-  text-align: left;
-}
-
-.timeline-item .dot {
-  position: absolute;
-  top: 20px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 3px solid #b388ff;
-  background: #1c152c;
-}
-
-      .left {
-        left: 0;
+      .timeline-item.left {
+        float: left;
         text-align: right;
       }
 
-      .right {
-        left: 50%;
+      .timeline-item.right {
+        float: right;
         text-align: left;
+      }
+
+      .timeline-item .dot {
+        position: absolute;
+        top: 45px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 3px solid #b388ff;
+        background: #1c152c;
+        left: 12px;
+        right: auto !important;
+      }
+
+      .timeline-item.left .dot {
+        right: -9px;
+      }
+
+      .timeline-item.right .dot {
+        left: -9px;
+      }
+
+      .timeline-card {
+        background: linear-gradient(145deg, #1b1528, #231a33);
+        border-radius: 18px;
+        padding: 25px;
+        color: #fff;
+        box-shadow: 0 0 20px rgba(147, 91, 255, 0.15);
       }
 
       .marker {
@@ -197,29 +208,6 @@
         max-width: 850px;
         margin: auto;
       }
-
-      /* 📱 MOBILE FIX */
-@media (max-width: 768px) {
-
-  .timeline::before {
-    left: 20px; /* linha vai para a esquerda */
-    transform: none;
-  }
-
-  .timeline-item {
-    width: 100%;
-    padding-left: 50px;
-    padding-right: 10px;
-    float: none;
-    text-align: left !important;
-  }
-
-  .timeline-item .dot {
-    left: 12px;
-    right: auto !important;
-  }
-
-}
     </style>
   </head>
   <body>
@@ -284,85 +272,111 @@
 
       <div class="timeline">
         <div class="timeline-item left">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">02 NOV</div>
-            Começamos a trocar mensagens — risadas, brincadeiras e o apelido ‘princesa’ (ou Dinossaura) surgindo.
-A conversa começou com aquela brincadeira no Instagram: se ninguém casasse até os 35, a gente casaria um com o outro kkkk.
-E olha que engraçado… nem imaginávamos que poderia existir tanta conexão.
-          </div>
-        </div>
-
-        <div class="timeline-item right">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">04 NOV</div>
-           Nosso primeiro encontro. A vibe bateu, o papo fluiu, e você sorriu com aquelas covinhas que derrubam qualquer um.
-(E sim… eu acertei na sorveteria 😄)
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>02 NOV</h4>
+            <p>
+              Começamos a trocar mensagens — risadas, brincadeiras e o apelido
+              ‘princesa’ (ou Dinossaura) surgindo. A conversa começou com aquela
+              brincadeira no Instagram: se ninguém casasse até os 35, a gente
+              casaria um com o outro kkkk. E olha que engraçado… nem
+              imaginávamos que poderia existir tanta conexão.
+            </p>
           </div>
         </div>
 
         <div class="timeline-item left">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">09 NOV</div>
-            Segundo encontro: clima leve, risadas, e a confiança começando a crescer.
-(E até hoje não sei se você realmente gostou do sushi… ou se só queria me agradar kkk)
-          </div>
-        </div>
-
-        <div class="timeline-item right">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">21 NOV</div>
-            Terceiro encontro — mais intimidade, mais química, mais aquele sentimento de ‘acho que quero ficar perto dessa mulher’.
-(Vou deixar você usar a figurinha que criou com a minha foto só porque eu pedi um chá gelado 😂)
-Obs: foi nesse encontro que eu descobri exatamente qual presente te daria. 😉
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>04 NOV</h4>
+            <p>
+              Nosso primeiro encontro. A vibe bateu, o papo fluiu, e você sorriu
+              com aquelas covinhas que derrubam qualquer um. (E sim… eu acertei
+              na sorveteria 😄)
+            </p>
           </div>
         </div>
 
         <div class="timeline-item left">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">27 NOV</div>
-            Conversamos sobre a vida, sobre princípios, sobre o futuro… e tudo fez sentido.
-(E sim, acabamos indo na Borelli de novo kkk)
-          </div>
-        </div>
-
-        <div class="timeline-item right">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">29 NOV</div>
-            Quinto encontro, com amigos. Tudo foi muito bom — zero esforço, zero tensão.
-Acho que já aprendi a ler sua mente… ou quase isso 😄
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>09 NOV</h4>
+            <p>
+              Segundo encontro: clima leve, risadas, e a confiança começando a
+              crescer. (E até hoje não sei se você realmente gostou do sushi… ou
+              se só queria me agradar kkk)
+            </p>
           </div>
         </div>
 
         <div class="timeline-item left">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">30 NOV</div>
-            Aquela mensagem: ‘mesmo que isso aqui não dê em nada, eu sempre vou me preocupar com você’ — foi sincera, mas cheia de carinho.
-Mas, como eu sempre falei… essa opção de ‘não dar em nada’ já nem existe mais, né? 😂💛
-          </div>
-        </div>
-
-        <div class="timeline-item right">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">01 DEZ</div>
-           Nossa conversa hoje foi mais séria (com um empurrãozinho da sua família 😅). Acho que demos um passo a mais…
-Vou parar por aqui, porque daqui pra frente a gente pode começar a escrever novas histórias juntos.
-E quem sabe, no ano que vem, essa nossa timeline não tenha 365 linhas?
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>21 NOV</h4>
+            <p>
+              Terceiro encontro — mais intimidade, mais química, mais aquele
+              sentimento de ‘acho que quero ficar perto dessa mulher’. (Vou
+              deixar você usar a figurinha que criou com a minha foto só porque
+              eu pedi um chá gelado 😂) Obs: foi nesse encontro que eu descobri
+              exatamente qual presente te daria. 😉
+            </p>
           </div>
         </div>
 
         <div class="timeline-item left">
-          <div class="marker"></div>
-          <div class="bubble">
-            <div class="date">09 DEZ</div>
-            o seu dia...
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>27 NOV</h4>
+            <p>
+              Conversamos sobre a vida, sobre princípios, sobre o futuro… e tudo
+              fez sentido. (E sim, acabamos indo na Borelli de novo kkk)
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>29 NOV</h4>
+            <p>
+              Quinto encontro, com amigos. Tudo foi muito bom — zero esforço,
+              zero tensão. Acho que já aprendi a ler sua mente… ou quase isso 😄
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>30 NOV</h4>
+            <p>
+              Aquela mensagem: ‘mesmo que isso aqui não dê em nada, eu sempre
+              vou me preocupar com você’ — foi sincera, mas cheia de carinho.
+              Mas, como eu sempre falei… essa opção de ‘não dar em nada’ já nem
+              existe mais, né? 😂💛
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>01 DEZ</h4>
+            <p>
+              Nossa conversa hoje foi mais séria (com um empurrãozinho da sua
+              família 😅). Acho que demos um passo a mais… Vou parar por aqui,
+              porque daqui pra frente a gente pode começar a escrever novas
+              histórias juntos. E quem sabe, no ano que vem, essa nossa timeline
+              não tenha 365 linhas?
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="timeline-card">
+            <h4>09 DEZ</h4>
+            <p>O seu dia...</p>
           </div>
         </div>
       </div>
