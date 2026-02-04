@@ -242,8 +242,8 @@
       }
 
       .letra-box {
-        width: 52px;
-        height: 52px;
+        width: 32px;
+        height: 32px;
         border-radius: 12px;
         background: rgba(240, 240, 240, 0.85);
         color: #2e7d32;
@@ -362,7 +362,7 @@
               Se você chegou até aqui, quer dizer que eu escutei um "SIM!" 💍
             </p>
 
-             <p class="fs-5">
+            <p class="fs-5">
               Desde janeiro, eu venho pensando em como fazer isso.
             </p>
 
@@ -399,9 +399,10 @@
         <!-- SCRIPT -->
         <script>
           const senhaCorreta = "SEMPRE"; // 🔑 TROQUE AQUI
-          // const dataLiberacao = new Date(2026, 4, 22, 9, 30); // 📅 DATA DO PEDIDO
-          const dataLiberacao = new Date(2026, 1, 1, 9, 30);
+          const dataLiberacao = new Date(2026, 4, 22, 9, 0); // 📅 DATA DO PEDIDO
+          // const dataLiberacao = new Date(2026, 1, 1, 9, 30);
           const agora = new Date();
+          //  const agora = new Date(2026, 4, 22, 9, 30);
           // ATENÇÃO:
           // mês começa em 0
           // 4 = maio
@@ -441,7 +442,6 @@
             });
             btnPlayPause.innerText = "⏸️";
 
-            const agora = new Date();
             const senha = document.getElementById("senha").value;
             const mensagemEl = document.getElementById("mensagem");
 
@@ -522,30 +522,33 @@
           });
           const letrasPorData = [
             {
-              letra: "S",
-              pagina: "flor-SP-ksjshbfbweiebna.html",
-              data: dataLiberacao,
-            },
-            {
-              letra: "P",
-              pagina: "flor-SP-ksjshbfbweiebna.html",
-              data: dataLiberacao,
-            },
-            {
               letra: "M",
               pagina: "flor-M-jvhdnbdjhbskhjdbvsd.html",
-              data: dataLiberacao,
+              data: new Date(2026, 1, 7, 9, 0),
             },
             {
               letra: "R",
               pagina: "flor-R-hfgbweeyegfbewjh.html",
+              data: new Date(2026, 2, 14, 9, 0)  ,
+            },
+            {
+              letra: "S",
+              pagina: "flor-SP-ksjshbfbweiebna.html",
+              data: new Date(2026, 3, 18, 9, 0),
+            },
+            {
+              letra: "P",
+              pagina: "flor-SP-ksjshbfbweiebna.html",
+              data: new Date(2026, 3, 18, 9, 0),
+            },
+            {
+              letra: "E",
+              pagina: "flor-EE-uhagbwfhjygahjwf.html",
               data: dataLiberacao,
             },
-            { letra: "E", pagina: "flor-EE-uhagbwfhjygahjwf.html", data: dataLiberacao },
           ];
 
           function letrasLiberadas() {
-            const agora = new Date();
             return letrasPorData
               .filter((item) => agora >= item.data)
               .map((item) => item.letra);
@@ -580,6 +583,8 @@
         </script>
       </div>
     </div>
-    <footer>🌼 Cada flor tem um motivo. Cada espera tem um sentido. - 03/02/2026</footer>
+    <footer>
+      🌼 Cada flor tem um motivo. Cada espera tem um sentido. - 03/02/2026
+    </footer>
   </body>
 </html>
