@@ -361,45 +361,7 @@
           </div> -->
         </section>
 
-        <section id="protegido" style="display: none">
-          <div class="card-jardim text-center my-5">
-            <p class="fs-5">
-              Se você chegou até aqui, quer dizer que eu escutei um "SIM!" 💍
-            </p>
-
-            <p class="fs-5">
-              Desde janeiro, eu venho pensando em como fazer isso.
-            </p>
-
-            <p class="fs-5">
-              Não só no que dizer, mas no cuidado, no tempo, no lugar certo.
-            </p>
-
-            <p class="fs-5">
-              Pensei em flores porque você gosta delas. Pensei em esperar porque
-              algumas coisas merecem ser construídas.
-            </p>
-
-            <p class="fs-5">Nada aqui foi por acaso. Foi intenção.</p>
-
-            <p class="fs-5">Eu escolhi você. E continuo escolhendo.</p>
-
-            <h4 class="mt-4">Agora, oficialmente, nós.</h4>
-          </div>
-
-          <div class="card-jardim my-5">
-            <h4 class="text-center mb-4">Daqui pra frente 🌷</h4>
-
-            <ul class="timeline-list">
-              <li>Mais viagens com café quente e mãos dadas</li>
-              <li>Planos feitos sem pressa, mas com certeza</li>
-              <li>Cuidar um do outro nos dias bons e nos difíceis</li>
-              <li>Construir um lar, do nosso jeito</li>
-              <li>Aprender, ajustar, crescer juntos</li>
-              <li>E escolher um ao outro, todos os dias</li>
-            </ul>
-          </div>
-        </section>
+        <section id="protegido" style="display: none"></section>
 
         <!-- SCRIPT -->
         <script>
@@ -441,6 +403,44 @@
             "Prometo: quando abrir, vai fazer sentido",
           ];
 
+          const htmlFinal = `<div class="card-jardim text-center my-5">
+            <p class="fs-5">
+              Se você chegou até aqui, quer dizer que eu escutei um "SIM!" 💍
+            </p>
+
+            <p class="fs-5">
+              Desde janeiro, eu venho pensando em como fazer isso.
+            </p>
+
+            <p class="fs-5">
+              Não só no que dizer, mas no cuidado, no tempo, no lugar certo.
+            </p>
+
+            <p class="fs-5">
+              Pensei em flores porque você gosta delas. Pensei em esperar porque
+              algumas coisas merecem ser construídas.
+            </p>
+
+            <p class="fs-5">Nada aqui foi por acaso. Foi intenção.</p>
+
+            <p class="fs-5">Eu escolhi você. E continuo escolhendo.</p>
+
+            <h4 class="mt-4">Agora, oficialmente, nós.</h4>
+          </div>
+
+          <div class="card-jardim my-5">
+            <h4 class="text-center mb-4">Daqui pra frente 🌷</h4>
+
+            <ul class="timeline-list">
+              <li>Mais viagens com café quente e mãos dadas</li>
+              <li>Planos feitos sem pressa, mas com certeza</li>
+              <li>Cuidar um do outro nos dias bons e nos difíceis</li>
+              <li>Construir um lar, do nosso jeito</li>
+              <li>Aprender, ajustar, crescer juntos</li>
+              <li>E escolher um ao outro, todos os dias</li>
+            </ul>
+          </div>`;
+
           function tentarAcesso() {
             musica.play().catch((err) => {
               console.log("Autoplay bloqueado:", err);
@@ -458,6 +458,8 @@
                 typeWriter(mensagem, mensagemEl);
               } else {
                 if (senha === senhaCorreta) {
+                  document.querySelector("#protegido").innerHTML = htmlFinal;
+
                   const authTitle = document.getElementById("authTitle");
                   const protegidoTitle =
                     document.getElementById("protegidoTitle");
@@ -529,22 +531,22 @@
             {
               letra: "M",
               pagina: "flor-M-jvhdnbdjhbskhjdbvsd.html",
-              data: new Date(2026, 1, 6, 9, 0),
+              data: new Date(2026, 1, 6, 18, 0),
             },
             {
               letra: "R",
               pagina: "flor-R-hfgbweeyegfbewjh.html",
-              data: new Date(2026, 2, 14, 9, 0),
+              data: new Date(2026, 2, 14, 20, 0),
             },
             {
               letra: "S",
               pagina: "flor-SP-ksjshbfbweiebna.html",
-              data: new Date(2026, 3, 18, 9, 0),
+              data: new Date(2026, 3, 18, 20, 0),
             },
             {
               letra: "P",
               pagina: "flor-SP-ksjshbfbweiebna.html",
-              data: new Date(2026, 3, 18, 9, 0),
+              data: new Date(2026, 3, 18, 20, 0),
             },
             {
               letra: "E",
